@@ -220,7 +220,7 @@
 					<texture>common/bgcolor.png</texture>
 					<animation effect="fade" start="100" end="90" time="40" condition="true">Conditional</animation>
 					<visible>!Container.Content(episodes) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(genres)</visible>
-				</control>				
+				</control>
 					<!-- disable rating -->
                 <control type="label">
                     <top>172</top>
@@ -313,7 +313,7 @@
 					<top>-8</top>
 					<width>200</width>
 					<height>135</height>
-					<aspectratio align="keep">keep</aspectratio>
+					<aspectratio>keep</aspectratio>
 					<texture fallback="special://skin/extras/Alticons/color studios/studios/Default-Studio.png">special://skin/extras/Alticons/color studios/studios/$INFO[ListItem.Label,,.png]</texture>
 					<visible>Container.Content(studios) + !StringCompare(ListItem.Label,..)</visible>
 				</control>
@@ -390,7 +390,7 @@
 					<height>173</height>
 					<aspectratio align="center">scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
-					<texture background="true">$VAR[BannerVar]</texture>
+					<texture background="true" fallback="thumbs/fallback_banner_tp_solid.jpg">$VAR[BannerVar]</texture>
 					<bordertexture border="8">thumbs/poster_shadow6.png</bordertexture>
 					<bordersize>15</bordersize>
 				</control>
@@ -443,7 +443,7 @@
 				</control>
          	</control>
 		</itemlayout>
-		<focusedlayout height="197" width="841" condition="[Container.Content(movies) + Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + Skin.HasSetting(TVWallBanner)]">	
+		<focusedlayout height="197" width="841" condition="[Container.Content(movies) + Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + Skin.HasSetting(TVWallBanner)]">
 			<control type="group">
 				<posx>4</posx>
 				<posy>18</posy>
@@ -456,7 +456,7 @@
 					<height>173</height>
 					<aspectratio align="center">scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
-					<texture background="true">$VAR[BannerVar]</texture>
+					<texture background="true" fallback="thumbs/fallback_banner_tp_solid.jpg">$VAR[BannerVar]</texture>
 					<bordersize>15</bordersize>
 				</control>
 				<control type="image">
@@ -518,7 +518,7 @@
 				<width>265</width>
 				<height>398</height>
 				<aspectratio>stretch</aspectratio>
-				<texture background="true" diffuse="wall/wall_movie_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar1]</texture>
+				<texture background="true" diffuse="wall/wall_movie_mask.png" fallback="thumbs/fallback_poster_tp_solid.jpg">$VAR[ListPosterVar1]</texture>
 				<bordersize>24</bordersize>
 				<visible>!Skin.HasSetting(squarethumbs) + !Skin.HasSetting(genrethumbs)</visible>
 			</control>
@@ -528,7 +528,7 @@
 				<width>265</width>
 				<height>398</height>
 				<aspectratio>stretch</aspectratio>
-				<texture background="true" diffuse="" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar1]</texture>
+				<texture background="true" diffuse="" fallback="thumbs/fallback_poster_tp_solid.jpg">$VAR[ListPosterVar1]</texture>
 				<bordersize>24</bordersize>
 				<visible>Skin.HasSetting(squarethumbs) + Skin.HasSetting(genrethumbs)</visible>
 			</control>
@@ -538,7 +538,7 @@
 				<width>265</width>
 				<height>398</height>
 				<aspectratio>stretch</aspectratio>
-				<texture background="true" diffuse="wall/wall_movie_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
+				<texture background="true" diffuse="wall/wall_movie_mask.png" fallback="thumbs/fallback_poster_tp_solid.jpg">$VAR[ListPosterVar]</texture>
 				<bordersize>24</bordersize>
 				<visible>!Skin.HasSetting(squarethumbs) + Skin.HasSetting(genrethumbs)</visible>
 			</control>
@@ -548,7 +548,7 @@
 				<width>265</width>
 				<height>398</height>
 				<aspectratio>stretch</aspectratio>
-				<texture background="true" diffuse="" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
+				<texture background="true" diffuse="" fallback="thumbs/fallback_poster_tp_solid.jpg">$VAR[ListPosterVar]</texture>
 				<bordersize>24</bordersize>
 				<visible>Skin.HasSetting(squarethumbs) + Skin.HasSetting(genrethumbs)</visible>
 			</control>
@@ -558,7 +558,7 @@
 				<width>265</width>
 				<height>398</height>
 				<aspectratio>stretch</aspectratio>
-				<texture background="true" diffuse="" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar1]</texture>
+				<texture background="true" diffuse="" fallback="thumbs/fallback_poster_tp_solid.jpg">$VAR[ListPosterVar1]</texture>
 				<bordersize>24</bordersize>
 				<visible>Skin.HasSetting(squarethumbs) + !Skin.HasSetting(genrethumbs)</visible>
 			</control>
@@ -589,7 +589,7 @@
 					<top>10</top>
 					<width>265</width>
 					<height>398</height>
-					<texture background="true" diffuse="wall/wall_movie_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar1]</texture>
+					<texture background="true" diffuse="wall/wall_movie_mask.png" fallback="thumbs/fallback_poster_tp_solid.jpg">$VAR[ListPosterVar1]</texture>
 					<bordertexture border="1" colordiffuse="$VAR[FocusTextureColorVar]">thumbs/poster_shadow40.png</bordertexture>
 					<bordersize>18</bordersize>
 					<visible>!Skin.HasSetting(squarethumbs) + !Skin.HasSetting(genrethumbs)</visible>
@@ -599,7 +599,7 @@
 					<top>10</top>
 					<width>265</width>
 					<height>398</height>
-					<texture background="true" diffuse="" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar1]</texture>
+					<texture background="true" diffuse="" fallback="thumbs/fallback_poster_tp_solid.jpg">$VAR[ListPosterVar1]</texture>
 					<bordertexture border="12" colordiffuse="$VAR[FocusTextureColorVar]">thumbs_square/poster_shadow90.png</bordertexture>
 					<bordersize>15</bordersize>
 					<visible>Skin.HasSetting(squarethumbs) + Skin.HasSetting(genrethumbs)</visible>
@@ -609,7 +609,7 @@
 					<top>10</top>
 					<width>265</width>
 					<height>398</height>
-					<texture background="true" diffuse="wall/wall_movie_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
+					<texture background="true" diffuse="wall/wall_movie_mask.png" fallback="thumbs/fallback_poster_tp_solid.jpg">$VAR[ListPosterVar]</texture>
 					<bordertexture border="1" colordiffuse="$VAR[FocusTextureColorVar]">thumbs/poster_shadow40.png</bordertexture>
 					<bordersize>18</bordersize>
 					<visible>!Skin.HasSetting(squarethumbs) + Skin.HasSetting(genrethumbs)</visible>
@@ -619,7 +619,7 @@
 					<top>10</top>
 					<width>265</width>
 					<height>398</height>
-					<texture background="true" diffuse="" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
+					<texture background="true" diffuse="" fallback="thumbs/fallback_poster_tp_solid.jpg">$VAR[ListPosterVar]</texture>
 					<bordertexture border="12" colordiffuse="$VAR[FocusTextureColorVar]">thumbs_square/poster_shadow90.png</bordertexture>
 					<bordersize>15</bordersize>
 					<visible>Skin.HasSetting(squarethumbs) + Skin.HasSetting(genrethumbs)</visible>
@@ -629,7 +629,7 @@
 					<top>10</top>
 					<width>265</width>
 					<height>398</height>
-					<texture background="true" diffuse="" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar1]</texture>
+					<texture background="true" diffuse="" fallback="thumbs/fallback_poster_tp_solid.jpg">$VAR[ListPosterVar1]</texture>
 					<bordertexture border="12" colordiffuse="$VAR[FocusTextureColorVar]">thumbs_square/poster_shadow90.png</bordertexture>
 					<bordersize>15</bordersize>
 					<visible>Skin.HasSetting(squarethumbs) + !Skin.HasSetting(genrethumbs)</visible>
@@ -747,7 +747,7 @@
 							</control>
                         </control>
                     </itemlayout>
-		<focusedlayout height="200" width="331" condition="Container.Content(episodes)"><!-- TV EPISODES LANDSCAPE ACTIVE-->                      
+		<focusedlayout height="200" width="331" condition="Container.Content(episodes)"><!-- TV EPISODES LANDSCAPE ACTIVE-->
                       <control type="group">
                             <top>13</top>
 							<left>10</left>
@@ -809,8 +809,8 @@
 								<visible>!Skin.HasSetting(InfoWallZoom)</visible>
 			                </control>
                         </control>
-                    </focusedlayout>	
-		
+                    </focusedlayout>
+
 		<itemlayout width="208" height="201" condition="![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)] | [Window.IsActive(pictures) + Substring(Container.FolderPath,\comics\)]] + ![Skin.HasSetting(titlewall) | StringCompare(Container.FolderName,youtube)]">
 			<include>WallIcons</include>
 		</itemlayout>

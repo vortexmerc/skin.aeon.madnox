@@ -33,7 +33,7 @@
 						<width>980</width>
 						<onleft>62</onleft>
 						<onleft>SetProperty(MediaMenu,True,home)</onleft>
-						<onleft>SetFocus(9050)</onleft>
+						<onleft>SetFocus(9000)</onleft>
 						<onright>60</onright>
 						<onup>505</onup>
 						<ondown>505</ondown>
@@ -50,11 +50,11 @@
 								<width>980</width>
 								<height>181</height>
 								<aspectratio>stretch</aspectratio>
-								<texture background="true">$VAR[BannerVar]</texture>
+								<texture background="true" fallback="thumbs/fallback_banner_tp_solid.jpg">$VAR[BannerVar]</texture>
 								<fadetime>400</fadetime>
 								<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
 								<bordersize>8</bordersize>
-								<visible>[!IsEmpty(ListItem.Art(banner)) + [!Skin.HasSetting(BannerInfoUseLogo) | !SubString(ListItem.Path,videodb://movies/sets)] ]| !IsEmpty(ListItem.Art(fanart)) + !SubString(ListItem.Path,videodb://movies/sets)</visible>
+								<visible>[!IsEmpty(ListItem.Art(banner)) + [!Skin.HasSetting(BannerInfoUseLogo) | !SubString(ListItem.Path,videodb://movies/sets) ]]| !IsEmpty(ListItem.Art(fanart)) + !SubString(ListItem.Path,videodb://movies/sets)</visible>
 							</control>
 							<control type="group">
 								<visible>IsEmpty(ListItem.Art(banner)) | [Skin.HasSetting(BannerInfoUseLogo) + SubString(ListItem.Path,videodb://movies/sets)]</visible>
@@ -157,9 +157,9 @@
 									<width>980</width>
 									<height>181</height>
 									<aspectratio>stretch</aspectratio>
-									<texture background="true">$VAR[BannerVar]</texture>
+									<texture background="true" fallback="thumbs/fallback_banner_tp_solid.jpg">$VAR[BannerVar]</texture>
 									<fadetime>400</fadetime>
-									<visible>[!IsEmpty(ListItem.Art(banner)) + [!Skin.HasSetting(BannerInfoUseLogo) | !SubString(ListItem.Path,videodb://movies/sets)] ]| !IsEmpty(ListItem.Art(fanart)) + !SubString(ListItem.Path,videodb://movies/sets)</visible>
+									<visible>[!IsEmpty(ListItem.Art(banner)) + [!Skin.HasSetting(BannerInfoUseLogo) | !SubString(ListItem.Path,videodb://movies/sets) ]]| !IsEmpty(ListItem.Art(fanart)) + !SubString(ListItem.Path,videodb://movies/sets)</visible>
 								</control>					
 								<control type="group">
 									<visible>IsEmpty(ListItem.Art(banner)) | [Skin.HasSetting(BannerInfoUseLogo) + SubString(ListItem.Path,videodb://movies/sets)]</visible>
@@ -634,7 +634,7 @@
 						<height>200</height>
 						<onleft>505</onleft>
 						<onright>SetProperty(MediaMenu,True,home)</onright>
-						<onright>SetFocus(9050)</onright>
+						<onright>SetFocus(9000)</onright>
 						<ondown>61</ondown>
 						<onup>61</onup>
 						<showonepage>false</showonepage>
